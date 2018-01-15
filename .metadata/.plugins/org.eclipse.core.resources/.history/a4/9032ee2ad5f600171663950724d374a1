@@ -1,0 +1,62 @@
+package experimental;
+
+import javax.swing.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+public class TangentGraph extends JFrame
+{
+	Panel panel;
+	
+	public TangentGraph()
+	{
+		this.setSize(1100, 800);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+		
+		panel = new Panel();
+		this.add(panel);
+	}	
+}
+
+class Panel extends JPanel
+{
+	int distance;
+	int divisionValue;
+	
+	Panel()
+	{
+		
+	}
+	
+	public void paintComponent(Graphics G)
+	{
+		super.paintComponent(G);
+		draw(G);
+	}
+	
+	void draw(Graphics G)
+	{
+		Graphics2D G2D = (Graphics2D) G;
+		
+		double xMod = 1;
+		double yMod = 1;
+		
+		double nowX = 20;
+		double nowY = 20;
+		
+		for(double i = 0; i < 90; i += 0.5)
+		{
+			G2D.setColor(Color.BLACK);
+			G2D.drawLine((int) nowX, (int) nowY, (int) (nowX + Math.tan(Math.toRadians(i)) * xMod),(int) (nowY + yMod));
+			G2D.setColor(Color.RED);
+			G2D.drawLine((int) (nowX + Math.tan(Math.toRadians(i)) * xMod), (int) (nowY + yMod), this.getWidth() - 20, (int) (nowY + yMod));
+			G2D.setColor(Color.GREEN);
+			G2D.drawLine((int) (nowX + Math.tan(Math.toRadians(i)) * xMod), (int) (nowY + yMod), (int) (nowX + Math.tan(Math.toRadians(i)) * xMod), this.getHeight() - 20);
+			
+			nowX += Math.tan(Math.toRadians(i)) * xMod;
+			nowY += yMod;
+		}
+	}
+}

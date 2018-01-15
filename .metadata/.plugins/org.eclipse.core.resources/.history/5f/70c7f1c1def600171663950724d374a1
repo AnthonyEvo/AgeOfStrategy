@@ -1,0 +1,5 @@
+package gameSourceLib;
+
+public interface GraphicalObject {
+
+}

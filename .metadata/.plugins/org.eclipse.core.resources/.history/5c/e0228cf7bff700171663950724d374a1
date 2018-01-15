@@ -1,0 +1,47 @@
+package experimental;
+
+import java.io.*;
+import java.net.*;
+
+public class IO_practice {
+
+	
+	URL url;
+	HttpURLConnection conn;
+	
+	File file = new File("src/Files/new.txt");
+	byte[] b = new byte[1024 * 32];
+	
+	public IO_practice()
+	{
+		int bytesInPackage = 0;
+		
+		try {
+			url = new URL("http://minecraftservers.org/vote/440795");
+			
+			conn = (HttpURLConnection) url.openConnection();
+			conn.addRequestProperty("User-Agent", "VoteListener_v0.1 FreeMinerServers 20/02/2016");
+			conn.setRequestMethod("GET");
+		}
+		catch(IOException Ex)
+		{
+			Ex.printStackTrace();
+		}
+		
+		try(InputStream input = conn.getInputStream())
+		{
+			input.read(b);			
+		} 
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	
+		for(int i = 0; b[i] != 0; i++)
+		{
+			bytesInPackage++;
+		}
+		
+		System.out.print(bytesInPackage);
+	}
+}

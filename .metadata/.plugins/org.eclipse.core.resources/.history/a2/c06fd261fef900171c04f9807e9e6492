@@ -1,0 +1,75 @@
+package experimental;
+
+import java.io.*;
+import java.net.*;
+
+public class IO_practice {
+
+	HttpURLConnection conn;
+	
+	File file = new File("src/Files/new.txt");
+	
+	byte[] b = new byte[1024 * 32];
+	
+	final String Top1 = "http://minecraftservers.org/vote/440795";
+	
+	public IO_practice()
+	{
+		getDataFromTop(Top1, "MinecraftServers.org");
+	}
+	
+	void getDataFromTop(String path, String AnalyzerType)
+	{
+		try {
+			URL url = new URL(path);
+			
+			conn = (HttpURLConnection) url.openConnection();
+			conn.addRequestProperty("User-Agent", "VoteListener_v0.1 FreeMinerServers 20/02/2016");
+			conn.setRequestMethod("GET");
+		}
+		catch(IOException Ex)
+		{
+			Ex.printStackTrace();
+		}
+		
+			try(InputStream input = conn.getInputStream())
+			{
+				input.read(b);
+			} 
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+			
+			try(InputStream input = conn.getInputStream())
+			{
+				input.read(b);
+			} 
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+		
+		for(int i = 0; i < b.length; i++)
+		{
+			System.out.print((char) b[i]);
+		}
+	}
+	
+	void topDataAnalyzer(String AnalyzerType)
+	{
+		switch(AnalyzerType)
+		{
+			case "MinecraftServers.org":
+				break;
+			
+			default:
+				break;
+		}
+	}
+}
+
+class voteTable
+{
+	
+}
