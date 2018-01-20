@@ -1,0 +1,33 @@
+package experimental;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class ex 
+{
+	public ex()
+	{	
+		ArrayList arr1 = new ArrayList();
+		ArrayList arr2 = new ArrayList();
+		for(int i = 0; i < 3; i++)
+		{
+			
+		}
+			
+	}
+	
+	void merge(ArrayList<Integer> list1, ArrayList<Integer> list2)
+	{
+		int fSize;
+		ArrayList _list1 = list1;
+		ArrayList _list2 = list2;
+		ArrayList _mergedArraylist;
+		
+		
+		
+		fSize = _list1.size() + _list2.size();
+		
+		
+	}
+}
+

@@ -1,0 +1,29 @@
+package experimental;
+
+import java.util.Set;
+
+public class ex 
+{
+	public ex()
+	{	
+		Set products = new HashSet();
+	    products.add(new Product("Hat", 3));
+	    products.add(new Product("Hat", 3));
+	    
+	    System.out.println(products);
+	}
+}
+
+class Product {
+    String title;
+    int size;
+
+    public Product(String title, int size) {
+        this.title = title;
+        this.size = size;
+    }
+
+    public String toString() {
+        return title + ":" + size;
+    }
+}

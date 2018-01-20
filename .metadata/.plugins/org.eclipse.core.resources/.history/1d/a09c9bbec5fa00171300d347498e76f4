@@ -1,0 +1,19 @@
+package experimental;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class ex 
+{
+	public ex()
+	{	
+		
+	}
+	
+	public void merge(ArrayList list1, ArrayList list2)
+	{
+		ArrayList _list1 = list1;
+		ArrayList _list2 = list2;
+	}
+}
+

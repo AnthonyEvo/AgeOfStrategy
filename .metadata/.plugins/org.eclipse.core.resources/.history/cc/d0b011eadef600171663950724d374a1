@@ -1,7 +1,0 @@
-package gameSourceLib;
-
-public interface GameWorldObject {
-
-	public void getGraphics();
-	
-}

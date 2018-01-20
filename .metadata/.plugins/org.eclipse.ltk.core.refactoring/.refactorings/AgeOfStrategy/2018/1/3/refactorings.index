@@ -3,3 +3,18 @@
 1516034816573	Delete element
 1516034990190	Delete element
 1516036807055	Delete element
+1516099323502	Rename type 'IO_practice'
+1516120752319	Move compilation unit
+1516120758424	Move compilation unit
+1516217807239	Rename local variable 'table'
+1516219886740	Rename local variable 'anlyzingArray'
+1516226867452	Rename local variable 'k'
+1516226881025	Rename local variable 'teg'
+1516227474849	Rename local variable 'k'
+1516235096461	Rename local variable 'analyzingArray'
+1516235146539	Rename local variable 'dataBeginPosition'
+1516238082440	Rename local variable 'LineTag'
+1516238091020	Rename local variable 'rawEndTag'
+1516239367297	Rename local variable 'scanedData'
+1516239380393	Rename local variable 'scanedData'
+1516239397002	Rename local variable 'scanedData'
