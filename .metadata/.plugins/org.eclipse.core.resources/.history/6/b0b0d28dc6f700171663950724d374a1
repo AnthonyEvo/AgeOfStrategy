@@ -1,9 +1,0 @@
-package experimental;
-
-public enum Tops
-{
-	MINECRAFT_SERVERS_ORG
-	{
-		public final String path = "http://minecraftservers.org/vote/440795", AnalyzeType = "MinecraftServers.org";
-	}
-}
