@@ -60,8 +60,8 @@ public class TankGameScreen extends JPanel implements Runnable, MouseMotionListe
 	
 	public void run()
 	{	
-		Figure = ObjectLoader.Load("Tank", 50, 50);
-		rFigure = new double[(int) Figure[0][4]][5];
+//		Figure = ObjectLoader.Load("Tank", 50, 50);
+//		rFigure = new double[(int) Figure[0][4]][5];
 		
 		while(true)
 		{			

@@ -24,8 +24,13 @@ public class ModelLoader
 	
 	public int getNumOfParts()
 	{
-		if(modelType == "light_tank") return 1;
+		if(modelType == "light_tank") return 2;
 		else return 0;
+	}
+	
+	public int getDependency(int partNum)
+	{
+		return 0;
 	}
 	
 	double angReculc(double x, double y)

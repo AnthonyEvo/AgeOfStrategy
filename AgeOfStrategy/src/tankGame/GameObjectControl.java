@@ -1,12 +1,12 @@
 package tankGame;
 
-public abstract class TankControl 
+public abstract class GameObjectControl 
 {
 	
 	int beginPosX;
 	int beginPosY;
 	
-	TankControl()
+	GameObjectControl()
 	{
 		
 	}
