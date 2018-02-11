@@ -16,13 +16,13 @@ public class SidePanel extends JPanel
 		System.out.println("Sidebar created");
 		
 		spButton1 = new JButton("Start Tank Game");
-		//this.add(spButton1);
+		this.add(spButton1);
 		
 		spButton2 = new JButton("Start Age of Strategy");
-		this.add(spButton2);
+		//this.add(spButton2);
 		
 		spButton3 = new JButton("Generate world");
-		this.add(spButton3);
+		//this.add(spButton3);
 		
 		spButton4 = new JButton("Back to main menu");
 		this.add(spButton4);
