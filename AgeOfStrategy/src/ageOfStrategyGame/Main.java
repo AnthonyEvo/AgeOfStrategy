@@ -11,7 +11,18 @@ public class Main
 	public static void main(String args[])
 	{
 		GameObject tank = new GameObject("light_tank");
-		tank.getPositionData(false);
+		tank.resetPosition();
+		
+		JFrame frame = new JFrame();
+		frame.setSize(400, 400);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		TankGameScreen screen = new TankGameScreen();
+		frame.add(screen);
+		frame.setVisible(true);
+		
+		screen.setData(tank.getPositionData(false));		
+		screen.reDraw();
 		
 //		TangentGraph tang = new TangentGraph();
 //		WorldLoader example = new WorldLoader(498462135);

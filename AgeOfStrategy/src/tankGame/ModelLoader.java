@@ -13,7 +13,7 @@ public class ModelLoader
 	public double[] getKeyPoints(int partNum)
 	{
 		boolean isKey = true;
-		return load(modelType, partNum, isKey)[0];	
+		return load(modelType, partNum, isKey)[0];
 	}
 	
 	public double[][] getPoints(int partNum)
@@ -91,8 +91,8 @@ public class ModelLoader
 				if(isKey)
 				{
 					arr = new double[1][3];
-					arr[0][0] = 0;
-					arr[0][1] = -5;
+					arr[0][0] = -5;
+					arr[0][1] = 0;
 					arr[0][2] = angReculc(arr[0][0], arr[0][1]);
 				}
 				else

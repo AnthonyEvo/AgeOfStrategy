@@ -1,51 +1,59 @@
 package tankGame;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class GameObject 
 {
-
-	int posZ, globalAngle = 34;
-	double posX = 300, posY = 300;
-	String vehicleType;
+	int posZ, globalAngle = 50, pointSum = 0;
+	double posX = 300, posY = 200;
+	String objectType;
 	
 	ArrayList<Part> parts = new ArrayList<Part>(0);
 	
-	public GameObject(String vehicleType)
+	public GameObject(String objectType)
 	{
-		this.vehicleType = vehicleType;
+		this.objectType = objectType;
 		loadModel();
-		
-		//проверка графики
-		
-		
 	}
 	
 	void loadModel()
 	{
-		ModelLoader model = new ModelLoader(vehicleType);
+		ModelLoader model = new ModelLoader(objectType);
 		
 		for(int i = 0; i < model.getNumOfParts(); i++)
 		{
 			parts.add(new Part(model, i));
+			pointSum += parts.get(i).getPointsNum();
 		}
 	}
 	
-	void resetPosition()
+	public void resetPosition()
 	{
-		
+		parts.get(1).setLocalAngle(37); 
 	} 
 	
-	public double[][] getPositionData(boolean isKey) 
+	public double[][][] getPositionData(boolean isKeyPosition) 
 	{
-		for(int i = 0; i < parts.size() && parts.get(i) != null; i++)
-		{
-			parts.get(i).getPosition();
+		double arr[][][];
+		
+		if(!isKeyPosition)
+		{	
+			arr = new double[parts.size()][][];
+			
+			for(int i = 0; i < parts.size() && parts.get(i) != null; i++)
+			{
+				arr[i] = parts.get(i).getPosition();
+			}
+			return arr;
 		}
-		return null;
+		else
+		{
+			arr = new double[1][1][3];
+			arr[0][0][0] = posX;
+			arr[0][0][1] = posY;
+			arr[0][0][2] = globalAngle;
+			return arr;
+		}
 	}
 	
 	class Part
@@ -73,6 +81,17 @@ public class GameObject
 			return localAngle;
 		}
 		
+		void setLocalAngle(int angle)
+		{
+			localAngle = angle;
+			angleNow = getMotherPartAngle() + localAngle;
+		}
+		
+		int getPointsNum()
+		{
+			return partPoints.length;
+		}
+		
 		double[][] getPosition()
 		{
 			double Rad = Math.sqrt(Math.pow(partKeyPoint[0], 2) + Math.pow(partKeyPoint[1], 2));;
@@ -85,7 +104,7 @@ public class GameObject
 				Rad = Math.sqrt(Math.pow(partPoints[i][0], 2) + Math.pow(partPoints[i][1], 2));
 				arr[i][0] = keyPointNowX + Math.cos(Math.toRadians((partPoints[i][2] + angleNow) % 360)) * Rad;
 				arr[i][1] = keyPointNowY + Math.sin(Math.toRadians((partPoints[i][2] + angleNow) % 360)) * Rad;
-				System.out.println(arr[i][0] + " " + arr[i][1]);
+//				System.out.println(arr[i][0] + " " + arr[i][1]);
 			}
 			return arr;
 		}
