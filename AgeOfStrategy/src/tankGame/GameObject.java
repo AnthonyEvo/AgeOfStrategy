@@ -32,7 +32,7 @@ public class GameObject
 		parts.get(1).setLocalAngle(37); 
 	} 
 	
-	public double[][][] getPositionData(boolean isKeyPosition) 
+	public double[][][] getLocate(boolean isKeyPosition)
 	{
 		double arr[][][];
 		

@@ -21,7 +21,7 @@ public class Main
 		frame.add(screen);
 		frame.setVisible(true);
 		
-		screen.setData(tank.getPositionData(false));		
+		screen.setData(tank.getLocate(false));		
 		screen.reDraw();
 		
 //		TangentGraph tang = new TangentGraph();
