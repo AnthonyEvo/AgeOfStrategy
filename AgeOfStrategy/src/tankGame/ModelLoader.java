@@ -124,9 +124,4 @@ public class ModelLoader
 				return null;
 		}
 	}
-	
-	class Part
-	{
-		
-	}
 }

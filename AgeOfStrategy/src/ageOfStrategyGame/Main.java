@@ -10,7 +10,8 @@ public class Main
 {
 	public static void main(String args[])
 	{
-		GameObject tank = new GameObject("light_tank");
+		GameCore core = new GameCore();
+/*		GameObject tank = new GameObject("light_tank");
 		tank.resetPosition();
 		
 		JFrame frame = new JFrame();
@@ -28,6 +29,7 @@ public class Main
 //		WorldLoader example = new WorldLoader(498462135);
 //		SwingUtilities.invokeLater(new Runnable() {public void run() {Core gameCore = new Core(1000, 720);}});
 //		SwingUtilities.invokeLater(new Runnable() {public void run() {Example mainWindow = new Example();}});
+*/	
 	}
 	
 }
