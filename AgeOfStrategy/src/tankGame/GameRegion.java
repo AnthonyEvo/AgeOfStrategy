@@ -13,5 +13,4 @@ public class GameRegion {
 	int sizeX, sizeY;
 	String regionType;
 	
-	
 }

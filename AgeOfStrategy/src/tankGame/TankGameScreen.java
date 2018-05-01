@@ -6,7 +6,6 @@ import java.awt.Graphics2D;
 import java.awt.event.*;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
-import java.util.Arrays;
 
 public class TankGameScreen extends JPanel
 {
@@ -37,7 +36,7 @@ public class TankGameScreen extends JPanel
 					G.drawLine((int) i[j - 1][0], (int) i[j - 1][1], (int) i[j][0], (int) i[j][1]);
 				}
 			}
-			System.out.println("Drawed");	
+			System.out.println("Drawed");
 			formLoaded = false;
 		}
 	}
